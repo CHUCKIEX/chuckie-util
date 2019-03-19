@@ -5,7 +5,7 @@
 		 * @method typeOf
 		 * @for util
 		 * @param {*} str
-		 * @return {string} number string boolean object function null undefined
+		 * @return {string} number string boolean array object function null undefined
 		 */
 		const typeOf = str => {
 			if (str === null) {
@@ -24,7 +24,10 @@
 
 		/**
 		 * 判断是否为空
+		 * @method isEmpty
+		 * @for util
 		 * @param {*} str 
+		 * @return {boolean} number string boolean array object function null undefined
 		 */
 		const isEmpty = str => {
 			if (
@@ -44,6 +47,12 @@
 				}
 				if (Object.prototype.toString.call(str) === "[object Number]") {
 					return str === 0 ? true : false
+				}
+				if (Object.prototype.toString.call(str) === "[object Function]") {
+					return false
+				}
+				if (Object.prototype.toString.call(str) === "[object Boolean]") {
+					return str
 				}
 			}
 		}
