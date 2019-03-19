@@ -28,7 +28,6 @@
 				'number': 'number',
 				'string': 'string',
 				'boolean': 'boolean',
-				'null': 'null',
 				'undefined': 'undefined',
 				'[object Function]': 'function',
 				'[object RegExp]': 'regexp',
