@@ -2,20 +2,23 @@
 	const util = () => {
 		/**
 		 * 返回变量类型
-		 * @param {*} str 
+		 * @method typeOf
+		 * @for util
+		 * @param {*} str
+		 * @return {string} number string boolean object function null undefined
 		 */
-		const typeOf = obj => {
-			if (obj === null) {
+		const typeOf = str => {
+			if (str === null) {
 				return null
-			} else if (typeof obj === 'object') {
-				if (obj && obj.constructor === Array) {
+			} else if (typeof str === 'object') {
+				if (str && str.constructor === Array) {
 					return 'array'
 				}
-				if (obj && obj.constructor === Object) {
+				if (str && str.constructor === Object) {
 					return 'object'
 				}
 			} else {
-				return typeof obj
+				return typeof str
 			}
 		}
 
