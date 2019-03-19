@@ -8,18 +8,35 @@
 		 * @return {string} number string boolean array object function null undefined
 		 */
 		const typeOf = str => {
-			if (str === null) {
-				return null
-			} else if (typeof str === 'object') {
-				if (str && str.constructor === Array) {
-					return 'array'
-				}
-				if (str && str.constructor === Object) {
-					return 'object'
-				}
-			} else {
-				return typeof str
+			// 第一种
+			// if (str === null) {
+			// 	return null
+			// } else if (typeof str === 'object') {
+			// 	if (str && str.constructor === Array) {
+			// 		return 'array'
+			// 	}
+			// 	if (str && str.constructor === Object) {
+			// 		return 'object'
+			// 	}
+			// } else {
+			// 	return typeof str
+			// }
+
+			// 第二种
+			let toString = Object.prototype.toString
+			let type = {
+				'number': 'number',
+				'string': 'string',
+				'boolean': 'boolean',
+				'null': 'null',
+				'undefined': 'undefined',
+				'[object Function]': 'function',
+				'[object RegExp]': 'regexp',
+				'[object Array]': 'array',
+				'[object Date]': 'date',
+				'[object Error]': 'error'
 			}
+			return type[typeof str] || type[toString.call(str)] || (str ? 'object' : 'null')
 		}
 
 		/**
