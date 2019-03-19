@@ -49,7 +49,7 @@
 					return str === 0 ? true : false
 				}
 				if (Object.prototype.toString.call(str) === "[object Function]") {
-					return false
+					return true
 				}
 				if (Object.prototype.toString.call(str) === "[object Boolean]") {
 					return str
